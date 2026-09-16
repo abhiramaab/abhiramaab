@@ -7,7 +7,7 @@ Building scalable, reliable backend and distributed systems.
 Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 <p align="center">
-  <a href="https://abhiram.tech">Portfolio</a>
+  <a href="https://portfolio.abhiram.tech">Portfolio</a>
   ·
   <a href="https://linkedin.com/in/ababhirama">LinkedIn</a>
   ·
