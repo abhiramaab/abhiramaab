@@ -11,7 +11,7 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
   ·
   <a href="https://linkedin.com/in/ababhirama">LinkedIn</a>
   ·
-  <a href="https://x.com/buildwithabhii">X</a>
+  <a href="https://x.com/abhiramcodes">X</a>
 </p>
 
 </div>
