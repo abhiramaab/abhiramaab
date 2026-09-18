@@ -49,12 +49,13 @@ A productivity platform backend that aggregates workspace services into automate
 
 ---
 
-### [RouteSphere](https://github.com/abhiramaab/routesphere-microservices)
+### [RouteSphere](https://github.com/abhiramaab/RouteSphere) · [Live Demo](https://routesphere.abhiram.tech/)
 
-A logistics and route dispatch management backend built for reliable order tracking and operations.
+A logistics and route dispatch management platform built for fleet tracking, driver allocation, and operational control.
 
-- **Stack:** Java, Spring Boot, Spring Cloud (Eureka, API Gateway, OpenFeign), PostgreSQL, Docker, JWT
-- Decomposed logistics operations into 9 independent microservices with Netflix Eureka discovery, API Gateway centralized JWT routing, and OpenFeign client-side load balancing.
+- **Live Platform:** [routesphere.abhiram.tech](https://routesphere.abhiram.tech/)
+- **Stack:** Java 21, Spring Boot 3, Spring Data JPA, Spring Security, JWT, React, TypeScript, Tailwind CSS
+- Provides automated shipment tracking across national freight corridors, driver allocation, vehicle telematics, and automated invoicing.
 
 ---
 
