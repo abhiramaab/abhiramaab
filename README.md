@@ -30,6 +30,7 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 ## Open Source Contributions
 
 - **[Spring Cloud](https://github.com/spring-cloud/spring-cloud-config/pull/3272) (Merged):** Implemented Azure DevOps Workload Identity authentication in Spring Cloud Config JGit HTTP transport (+706 lines).
+- **[Spring Boot Admin](https://github.com/codecentric/spring-boot-admin/pull/5584) (Merged):** Configurable browser notifications timeout and click-through deep-linking to instance details for single-instance status changes (+148 lines).
 - **[Apache Camel](https://github.com/apache/camel-kamelets/pull/3039) (Merged):** Resolved Kafka record key preservation across HTTP hops in kafka-sink Kamelet.
 - **[Apache Shiro](https://github.com/apache/shiro/pull/2854) (Merged):** Resolved Active Directory user principal name binding bug (merged in release 3.0.1).
 - **[Apache Hop](https://github.com/apache/hop/pull/8344) (Merged):** Fixed Hop Web stalled session bug via ServerPushSession UI keepalive and suppressed redundant HTTP wire logs.
