@@ -47,7 +47,7 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 High-throughput payment gateway orchestrator tackling race conditions, event delivery, and accounting.
 
 - **Stack:** Java 21, Spring Boot 3, Redis, PostgreSQL, Docker, JUnit 5, Mockito
-- **Links:** [Live Platform](https://loompay.abhiram.tech) · [Code](https://github.com/abhiramaab/loompay)
+- **Links:** [Live Platform](https://loompay.abhiram.tech) · [Code](https://github.com/abhiramaab/loompay) · [Documentation](https://github.com/abhiramaab/loompay/blob/main/docs/ARCHITECTURE.md)
 
 <details>
 <summary><strong>System Design & Architecture Breakdown</strong></summary>
@@ -87,7 +87,7 @@ Workspace automation and autonomous agent platform connecting Gmail, Google Cale
 Logistics and fleet dispatch management platform built for vehicle tracking, driver allocation, and operational control.
 
 - **Stack:** Java 21, Spring Boot 3, Spring Data JPA, Spring Security, JWT, React, TypeScript, Tailwind CSS
-- **Links:** [Live Platform](https://routesphere.abhiram.tech/) · [Code](https://github.com/abhiramaab/RouteSphere)
+- **Links:** [Live Platform](https://routesphere.abhiram.tech/) · [Code](https://github.com/abhiramaab/RouteSphere) · [Documentation](https://github.com/abhiramaab/RouteSphere/blob/main/docs/ARCHITECTURE.md)
 
 <details>
 <summary><strong>System Design & Architecture Breakdown</strong></summary>
