@@ -47,7 +47,7 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 A productivity platform backend that aggregates workspace services into automated workflows.
 
 - **Stack:** Java, Spring Boot, Spring Security, PostgreSQL, Docker, AWS EC2, HTTP/2
-- Engineered Google OAuth 2.0 sync (Gmail API), HTTP/2 multiplexing, real-time Server-Sent Events (SSE), and stateless JWT filter chains.
+- Built Google OAuth 2.0 sync (Gmail API), HTTP/2 multiplexing, real-time Server-Sent Events (SSE), and stateless JWT filter chains.
 
 ---
 
