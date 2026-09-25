@@ -44,41 +44,60 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 ### [LoomPay](https://github.com/abhiramaab/loompay) · [Live Demo](https://loompay.abhiram.tech)
 
-A payment gateway and ledger backend built in Java 21 and Spring Boot, focusing on race conditions, event delivery, and accounting.
+High-throughput payment gateway orchestrator tackling race conditions, event delivery, and accounting.
 
-- **Live Platform:** [loompay.abhiram.tech](https://loompay.abhiram.tech) · **Code:** [github.com/abhiramaab/loompay](https://github.com/abhiramaab/loompay)
-- **Stack:** Java 21, Spring Boot 3, Redis, PostgreSQL, Docker, System Design, JUnit 5, Mockito
-- **Architecture & System Design:**
-  - **Idempotency & Distributed Locks:** Uses Redis `SET NX EX` with double-checked idempotency keys to guarantee payments are processed exactly once and prevent duplicate charges during concurrent clicks.
-  - **Transactional Outbox Pattern:** Writes payment events directly to an outbox table in the same database transaction, with a background worker relaying webhooks so messages never drop during network failures.
-  - **Double-Entry Ledger:** Records debits and credits for every transaction to keep account balances audit-proof.
-  - **Consistent Hashing Router:** Uses a 360° virtual node ring in memory (`TreeMap`) to balance merchant traffic across servers and handle node crashes cleanly.
-  - **Automated Reconciliation:** Runs a scheduled job to detect and fail out payments that got stuck in `PROCESSING` after 5 minutes.
+- **Stack:** Java 21, Spring Boot 3, Redis, PostgreSQL, Docker, JUnit 5, Mockito
+- **Links:** [Live Platform](https://loompay.abhiram.tech) · [Code](https://github.com/abhiramaab/loompay)
+
+<details>
+<summary><strong>System Design & Architecture Breakdown</strong></summary>
+
+- **Idempotency & Distributed Locks:** Uses Redis `SET NX EX` with double-checked idempotency keys to guarantee payments are processed exactly once and prevent duplicate charges during concurrent clicks.
+- **Transactional Outbox Pattern:** Writes payment events directly to an outbox table in the same database transaction, with a background worker relaying webhooks so messages never drop during network failures.
+- **Double-Entry Ledger:** Records debits and credits for every transaction to keep account balances audit-proof.
+- **Consistent Hashing Router:** Uses a 360° virtual node ring in memory (`TreeMap`) to balance merchant traffic across servers and handle node crashes cleanly.
+- **Automated Reconciliation:** Runs a scheduled job to detect and fail out payments that got stuck in `PROCESSING` after 5 minutes.
+
+</details>
 
 ---
 
 ### [Synoptiq](https://github.com/abhiramaab/synoptiq-docs) · [Live Demo](https://usesynoptiq.com)
 
-A workspace automation and autonomous agent platform connecting Gmail, Google Calendar, GitHub, and unified search into a single developer interface.
+Workspace automation and autonomous agent platform connecting Gmail, Google Calendar, GitHub, and unified search into one interface.
 
-- **Live Platform:** [usesynoptiq.com](https://usesynoptiq.com) · **Docs:** [github.com/abhiramaab/synoptiq-docs](https://github.com/abhiramaab/synoptiq-docs)
 - **Stack:** Java 21, Spring Boot 3.5, Spring Security, PostgreSQL (Neon), OpenAI GPT-4.1-mini, Docker, AWS EC2, HTTP/2, React 18
-- **Architecture & System Design:**
-  - **Deterministic Agent Router:** Uses an intent classifier to route structured queries directly (bypassing LLMs for sub-100ms response times) and delegates complex multi-step goals to an agent planner.
-  - **Parallel Tool Executor:** Executes external API requests across Gmail, Google Calendar, and GitHub concurrently using Java virtual threads and `CompletableFuture`.
-  - **Secure Token Lifecycle:** Encrypts multi-provider OAuth refresh tokens using AES-256 before database persistence and handles automatic token rotation without dropping active sessions.
-  - **Incremental Mailbox Sync:** Ingests changes using Gmail history tokens and delta updates instead of polling full mailboxes, saving network bandwidth and database write load.
-  - **Unified Semantic Search:** Consolidates queries across emails, thread attachments, GitHub PRs, and upcoming calendar meetings in one indexed pipeline.
+- **Links:** [Live Platform](https://usesynoptiq.com) · [Documentation](https://github.com/abhiramaab/synoptiq-docs)
+
+<details>
+<summary><strong>System Design & Architecture Breakdown</strong></summary>
+
+- **Deterministic Agent Router:** Uses an intent classifier to route structured queries directly (bypassing LLMs for sub-100ms response times) and delegates complex multi-step goals to an agent planner.
+- **Parallel Tool Executor:** Executes external API requests across Gmail, Google Calendar, and GitHub concurrently using Java virtual threads and `CompletableFuture`.
+- **Secure Token Lifecycle:** Encrypts multi-provider OAuth refresh tokens using AES-256 before database persistence and handles automatic token rotation without dropping active sessions.
+- **Incremental Mailbox Sync:** Ingests changes using Gmail history tokens and delta updates instead of polling full mailboxes, saving network bandwidth and database write load.
+- **Unified Semantic Search:** Consolidates queries across emails, thread attachments, GitHub PRs, and upcoming calendar meetings in one indexed pipeline.
+
+</details>
 
 ---
 
 ### [RouteSphere](https://github.com/abhiramaab/RouteSphere) · [Live Demo](https://routesphere.abhiram.tech/)
 
-A logistics and route dispatch management platform built for fleet tracking, driver allocation, and operational control.
+Logistics and fleet dispatch management platform built for vehicle tracking, driver allocation, and operational control.
 
-- **Live Platform:** [routesphere.abhiram.tech](https://routesphere.abhiram.tech/)
 - **Stack:** Java 21, Spring Boot 3, Spring Data JPA, Spring Security, JWT, React, TypeScript, Tailwind CSS
-- Provides automated shipment tracking across national freight corridors, driver allocation, vehicle telematics, and automated invoicing.
+- **Links:** [Live Platform](https://routesphere.abhiram.tech/) · [Code](https://github.com/abhiramaab/RouteSphere)
+
+<details>
+<summary><strong>System Design & Architecture Breakdown</strong></summary>
+
+- **Dispatch Orchestration:** State-driven trip transitions (`PENDING` -> `ASSIGNED` -> `IN_TRANSIT` -> `DELIVERED`) ensuring drivers and vehicles are never double-booked.
+- **Fleet Telematics & Maintenance:** Logs vehicle operating metrics, fuel consumption ledgers, and scheduled preventative maintenance windows.
+- **Automated Billing Engine:** Triggers customer freight invoice generation immediately upon delivery fulfillment with receipt dispatches.
+- **Decoupled Security:** Enforces role-based access control (RBAC) and stateless HMAC-signed JWT filters separating drivers, dispatch coordinators, and financial auditors.
+
+</details>
 
 ---
 
