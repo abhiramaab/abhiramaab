@@ -42,15 +42,6 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 ## Featured Projects
 
-### [Synoptiq](https://github.com/abhiramaab/synoptiq)
-
-A productivity platform backend that aggregates workspace services into automated workflows.
-
-- **Stack:** Java, Spring Boot, Spring Security, PostgreSQL, Docker, AWS EC2, HTTP/2
-- Built Google OAuth 2.0 sync (Gmail API), HTTP/2 multiplexing, real-time Server-Sent Events (SSE), and stateless JWT filter chains.
-
----
-
 ### [LoomPay](https://github.com/abhiramaab/loompay) · [Live Demo](https://loompay.abhiram.tech)
 
 A payment gateway and ledger backend built in Java 21 and Spring Boot, focusing on race conditions, event delivery, and accounting.
@@ -63,6 +54,15 @@ A payment gateway and ledger backend built in Java 21 and Spring Boot, focusing 
   - **Double-Entry Ledger:** Records debits and credits for every transaction to keep account balances audit-proof.
   - **Consistent Hashing Router:** Uses a 360° virtual node ring in memory (`TreeMap`) to balance merchant traffic across servers and handle node crashes cleanly.
   - **Automated Reconciliation:** Runs a scheduled job to detect and fail out payments that got stuck in `PROCESSING` after 5 minutes.
+
+---
+
+### [Synoptiq](https://github.com/abhiramaab/synoptiq)
+
+A productivity platform backend that aggregates workspace services into automated workflows.
+
+- **Stack:** Java, Spring Boot, Spring Security, PostgreSQL, Docker, AWS EC2, HTTP/2
+- Built Google OAuth 2.0 sync (Gmail API), HTTP/2 multiplexing, real-time Server-Sent Events (SSE), and stateless JWT filter chains.
 
 ---
 
