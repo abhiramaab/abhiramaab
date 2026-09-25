@@ -20,6 +20,7 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 ## Core Tech Stack
 
+- **Architecture & System Design:** System Design (HLD & LLD), Distributed Mutex Locks, Transactional Outbox Pattern, Consistent Hashing, Double-Entry Ledger, Token-Bucket Rate Limiting
 - **Languages & Frameworks:** Java (8/17/21), Spring Boot, Spring MVC, RESTful APIs, Microservices
 - **Distributed & Data Stores:** PostgreSQL, MySQL, Redis, Spring Cloud (Eureka, Gateway, OpenFeign)
 - **Security & Identity:** Spring Security, JWT, OAuth 2.0, RBAC
@@ -50,6 +51,21 @@ A productivity platform backend that aggregates workspace services into automate
 
 ---
 
+### [LoomPay](https://github.com/abhiramaab/loompay) · [Live Demo](https://loompay.abhiram.tech)
+
+A high-throughput distributed payment and ledger orchestration engine engineered for zero-loss financial transaction processing.
+
+- **Live Platform:** [loompay.abhiram.tech](https://loompay.abhiram.tech) · **Code:** [github.com/abhiramaab/loompay](https://github.com/abhiramaab/loompay)
+- **Stack:** Java 21, Spring Boot 3, Redis, PostgreSQL, Docker, System Design, JUnit 5, Mockito
+- **System Design Core:**
+  - **Distributed Mutex Lock:** Eliminates double-charging under concurrent payment bursts using atomic Redis `SET NX EX` locks with Double-Checked Idempotency.
+  - **Transactional Outbox Pattern:** Guarantees zero-loss event and webhook dispatching under the same ACID transaction without distributed 2PC overhead.
+  - **Double-Entry Ledger:** Enforces financial integrity with strict debit/credit balance pairing.
+  - **Consistent Hashing Router:** Implements 360° ring routing with virtual replicas to eliminate node hotspots and handle server failures gracefully.
+  - **Automated Reconciliation:** Background scheduler rescuing stuck `PROCESSING` transactions via automated timeouts.
+
+---
+
 ### [RouteSphere](https://github.com/abhiramaab/RouteSphere) · [Live Demo](https://routesphere.abhiram.tech/)
 
 A logistics and route dispatch management platform built for fleet tracking, driver allocation, and operational control.
@@ -57,15 +73,6 @@ A logistics and route dispatch management platform built for fleet tracking, dri
 - **Live Platform:** [routesphere.abhiram.tech](https://routesphere.abhiram.tech/)
 - **Stack:** Java 21, Spring Boot 3, Spring Data JPA, Spring Security, JWT, React, TypeScript, Tailwind CSS
 - Provides automated shipment tracking across national freight corridors, driver allocation, vehicle telematics, and automated invoicing.
-
----
-
-### [WorkBoard](https://github.com/abhiramaab/workboard)
-
-An enterprise project management backend modeling multi-level corporate hierarchies.
-
-- **Stack:** Java, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL/MySQL, Spring Security
-- Architected relational data models for departments, tasks, and employees with optimized JPA fetch strategies and JPA Specifications for dynamic filtering and pagination.
 
 ---
 
