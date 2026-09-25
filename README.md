@@ -57,12 +57,18 @@ A payment gateway and ledger backend built in Java 21 and Spring Boot, focusing 
 
 ---
 
-### [Synoptiq](https://github.com/abhiramaab/synoptiq)
+### [Synoptiq](https://github.com/abhiramaab/synoptiq-docs) · [Live Demo](https://usesynoptiq.com)
 
-A productivity platform backend that aggregates workspace services into automated workflows.
+A workspace automation and autonomous agent platform connecting Gmail, Google Calendar, GitHub, and unified search into a single developer interface.
 
-- **Stack:** Java, Spring Boot, Spring Security, PostgreSQL, Docker, AWS EC2, HTTP/2
-- Built Google OAuth 2.0 sync (Gmail API), HTTP/2 multiplexing, real-time Server-Sent Events (SSE), and stateless JWT filter chains.
+- **Live Platform:** [usesynoptiq.com](https://usesynoptiq.com) · **Docs:** [github.com/abhiramaab/synoptiq-docs](https://github.com/abhiramaab/synoptiq-docs)
+- **Stack:** Java 21, Spring Boot 3.5, Spring Security, PostgreSQL (Neon), OpenAI GPT-4.1-mini, Docker, AWS EC2, HTTP/2, React 18
+- **Architecture & System Design:**
+  - **Deterministic Agent Router:** Uses an intent classifier to route structured queries directly (bypassing LLMs for sub-100ms response times) and delegates complex multi-step goals to an agent planner.
+  - **Parallel Tool Executor:** Executes external API requests across Gmail, Google Calendar, and GitHub concurrently using Java virtual threads and `CompletableFuture`.
+  - **Secure Token Lifecycle:** Encrypts multi-provider OAuth refresh tokens using AES-256 before database persistence and handles automatic token rotation without dropping active sessions.
+  - **Incremental Mailbox Sync:** Ingests changes using Gmail history tokens and delta updates instead of polling full mailboxes, saving network bandwidth and database write load.
+  - **Unified Semantic Search:** Consolidates queries across emails, thread attachments, GitHub PRs, and upcoming calendar meetings in one indexed pipeline.
 
 ---
 
