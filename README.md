@@ -53,16 +53,16 @@ A productivity platform backend that aggregates workspace services into automate
 
 ### [LoomPay](https://github.com/abhiramaab/loompay) · [Live Demo](https://loompay.abhiram.tech)
 
-A high-throughput distributed payment and ledger orchestration engine engineered for zero-loss financial transaction processing.
+A payment gateway and ledger backend built in Java 21 and Spring Boot, focusing on race conditions, event delivery, and accounting.
 
 - **Live Platform:** [loompay.abhiram.tech](https://loompay.abhiram.tech) · **Code:** [github.com/abhiramaab/loompay](https://github.com/abhiramaab/loompay)
 - **Stack:** Java 21, Spring Boot 3, Redis, PostgreSQL, Docker, System Design, JUnit 5, Mockito
-- **System Design Core:**
-  - **Distributed Mutex Lock:** Eliminates double-charging under concurrent payment bursts using atomic Redis `SET NX EX` locks with Double-Checked Idempotency.
-  - **Transactional Outbox Pattern:** Guarantees zero-loss event and webhook dispatching under the same ACID transaction without distributed 2PC overhead.
-  - **Double-Entry Ledger:** Enforces financial integrity with strict debit/credit balance pairing.
-  - **Consistent Hashing Router:** Implements 360° ring routing with virtual replicas to eliminate node hotspots and handle server failures gracefully.
-  - **Automated Reconciliation:** Background scheduler rescuing stuck `PROCESSING` transactions via automated timeouts.
+- **Architecture & System Design:**
+  - **Distributed Locks:** Uses Redis `SET NX EX` with idempotency checks to stop duplicate charges when users click pay multiple times concurrently.
+  - **Transactional Outbox Pattern:** Writes payment events directly to an outbox table in the same database transaction, with a background worker relaying webhooks so messages never drop during network failures.
+  - **Double-Entry Ledger:** Records debits and credits for every transaction to keep account balances audit-proof.
+  - **Consistent Hashing Router:** Uses a 360° virtual node ring in memory (`TreeMap`) to balance merchant traffic across servers and handle node crashes cleanly.
+  - **Automated Reconciliation:** Runs a scheduled job to detect and fail out payments that got stuck in `PROCESSING` after 5 minutes.
 
 ---
 
