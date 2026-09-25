@@ -20,7 +20,7 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 ## Core Tech Stack
 
-- **Architecture & System Design:** System Design (HLD & LLD), Distributed Mutex Locks, Transactional Outbox Pattern, Consistent Hashing, Double-Entry Ledger, Token-Bucket Rate Limiting
+- **Architecture & System Design:** System Design (HLD & LLD), Idempotency, Distributed Mutex Locks, Transactional Outbox Pattern, Consistent Hashing, Double-Entry Ledger, Token-Bucket Rate Limiting
 - **Languages & Frameworks:** Java (8/17/21), Spring Boot, Spring MVC, RESTful APIs, Microservices
 - **Distributed & Data Stores:** PostgreSQL, MySQL, Redis, Spring Cloud (Eureka, Gateway, OpenFeign)
 - **Security & Identity:** Spring Security, JWT, OAuth 2.0, RBAC
@@ -58,7 +58,7 @@ A payment gateway and ledger backend built in Java 21 and Spring Boot, focusing 
 - **Live Platform:** [loompay.abhiram.tech](https://loompay.abhiram.tech) · **Code:** [github.com/abhiramaab/loompay](https://github.com/abhiramaab/loompay)
 - **Stack:** Java 21, Spring Boot 3, Redis, PostgreSQL, Docker, System Design, JUnit 5, Mockito
 - **Architecture & System Design:**
-  - **Distributed Locks:** Uses Redis `SET NX EX` with idempotency checks to stop duplicate charges when users click pay multiple times concurrently.
+  - **Idempotency & Distributed Locks:** Uses Redis `SET NX EX` with double-checked idempotency keys to guarantee payments are processed exactly once and prevent duplicate charges during concurrent clicks.
   - **Transactional Outbox Pattern:** Writes payment events directly to an outbox table in the same database transaction, with a background worker relaying webhooks so messages never drop during network failures.
   - **Double-Entry Ledger:** Records debits and credits for every transaction to keep account balances audit-proof.
   - **Consistent Hashing Router:** Uses a 360° virtual node ring in memory (`TreeMap`) to balance merchant traffic across servers and handle node crashes cleanly.
