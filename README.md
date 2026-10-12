@@ -101,6 +101,25 @@ Logistics and fleet dispatch management platform built for vehicle tracking, dri
 
 ---
 
+### [Velt](https://github.com/abhiramaab/velt) · [Live Platform](https://velt.cloud)
+
+AI-native design generation platform synthesizing production-ready digital design documents, responsive prototypes, and design systems from natural language prompts.
+
+- **Stack:** Java 21, Spring Boot 3.5, Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Supabase, OpenAI GPT-4o
+- **Links:** [Live Platform](https://velt.cloud) · [Code](https://github.com/abhiramaab/velt)
+
+<details>
+<summary><strong>System Design & Architecture Breakdown</strong></summary>
+
+- **Strict Schema Enforcement:** Enforces deterministic OpenAI GPT-4o structured JSON schema outputs to guarantee compile-time type-safe design document trees.
+- **Dual-Tier Service Layer:** High-performance Next.js 15 App Router frontend paired with an enterprise Java 21 / Spring Boot 3.5 backend service.
+- **Automated Design Token Extraction:** Real-time generation of typography, color palette tokens, and CSS design variables directly from prompt synthesis.
+- **Multi-Format Canvas Engine:** Dynamic rendering of responsive mobile, tablet, and desktop prototypes with live theme and layout adaptability.
+
+</details>
+
+---
+
 ## Currently Exploring
 
 - Distributed Systems & High-Throughput Architecture
