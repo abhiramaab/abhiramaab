@@ -2,7 +2,7 @@
 
 # Abhirama
 
-Self-Taught Backend Developer · Building scalable, reliable distributed systems.
+Backend Developer · Building scalable, reliable distributed systems.
 
 Distributed Systems • Backend Engineering • Cloud Infrastructure
 
