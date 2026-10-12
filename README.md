@@ -30,13 +30,23 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 ## Open Source Contributions
 
-- **[Apache BifroMQ](https://github.com/apache/bifromq/pull/314) (Integrated via [#315](https://github.com/apache/bifromq/pull/315)):** Diagnosed QoS 1 persistent subscriber deadlock caused by inbound Netty decoder & outbound packet-sizer mismatch (Issue #313); authored varint-aware boundary limits and drop-and-confirm delivery semantics.
-- **[Spring Cloud](https://github.com/spring-cloud/spring-cloud-config/pull/3272) (Merged):** Implemented Azure DevOps Workload Identity authentication in Spring Cloud Config JGit HTTP transport (+706 lines).
-- **[codecentric / spring-boot-admin](https://github.com/codecentric/spring-boot-admin/pull/5584) (Merged):** Configurable browser notifications timeout and click-through deep-linking to instance details for single-instance status changes (Issue #5504, +148 lines).
-- **[Apache Camel](https://github.com/apache/camel-kamelets/pull/3039) (Merged):** Resolved Kafka record key preservation across HTTP hops in kafka-sink Kamelet.
-- **[Apache Shiro](https://github.com/apache/shiro/pull/2854) (Merged):** Resolved Active Directory user principal name binding bug (merged in release 3.0.1).
-- **[Apache Hop](https://github.com/apache/hop/pull/8344) (Merged):** Fixed Hop Web stalled session bug via ServerPushSession UI keepalive and suppressed redundant HTTP wire logs.
-- **[Kestra](https://github.com/kestra-io/kestra/pull/19007) ([Core Engine #19007](https://github.com/kestra-io/kestra/pull/19007) & [Telegram Plugin #51](https://github.com/kestra-io/plugin-telegram/pull/51)) (Merged):** Closed socket leak in MCP client health-check mechanism; added case-sensitive enum validation for Telegram plugin.
+### Tier 1: Core Frameworks & Distributed Systems
+
+- **[Spring Boot (Core)](https://github.com/spring-projects/spring-boot) (`fix-netty-graceful-abort-hang-52119`):** Avoid hang in `NettyWebServer.stop()` when stopping immediately after graceful shutdown abort.
+- **[Spring Cloud Config](https://github.com/spring-cloud/spring-cloud-config/pull/3272) (PR #3272 – Merged):** Azure DevOps Managed Identity passwordless authentication & Bearer token injection for JGit HTTP transport (+706 lines).
+- **[Apache BifroMQ](https://github.com/apache/bifromq/pull/314) (PR #314 – Integrated via [#315](https://github.com/apache/bifromq/pull/315)):** Netty decoder buffer boundary alignment with MQTT varints & outbound packet size enforcement (Issue #313).
+- **[Apache Shiro](https://github.com/apache/shiro/pull/2854) (PR #2854 – Merged into 3.0.1):** Microsoft Active Directory UPN vs DN principal binding fix in LDAP realm.
+- **[Apache Camel Kamelets](https://github.com/apache/camel-kamelets/pull/3039) (PR #3039 – Merged):** Preserving `ce-kafkakey` across HTTP hops to maintain Kafka partition ordering.
+- **[Spring Boot Admin](https://github.com/codecentric/spring-boot-admin/pull/5584) (PR #5584 – Merged):** Configurable browser notification timeouts & single-instance detail deep-linking (Issue #5504, +148 lines).
+- **[Kestra Core Engine](https://github.com/kestra-io/kestra/pull/19007) (PR #19007 – Merged):** Socket descriptor leak fix during MCP auto health check probing.
+- **[Kestra Telegram Plugin](https://github.com/kestra-io/plugin-telegram/pull/51) (PR #51 – Merged):** Case-sensitive `parseMode` enum validation to fail fast before API dispatch.
+- **[Apache Hop Web](https://github.com/apache/hop/pull/8344) (PR #8344 – Merged):** Maintaining active `ServerPushSession` during pipeline log streaming to prevent UI freezes.
+- **[Apache Hop Core](https://github.com/apache/hop/pull/8343) (PR #8343 – Merged):** Startup HTTP wire logging noise suppression in `HopEnvironment`.
+
+### Tier 2: Jenkins Ecosystem & Tooling
+
+- **[Jenkins Atlassian Jira Software Cloud Plugin](https://github.com/jenkinsci/atlassian-jira-software-cloud-plugin/pull/143) (PR #143):** Resolved multibranch pipeline build/deployment URL routing 404s via `RunUrlProvider` branch path percent-encoding.
+- **[Jenkins Workflow SCM Step Plugin](https://github.com/jenkinsci/workflow-scm-step-plugin/pull/273) (PR #273):** Eliminated redundant local workspace baseline calculations when SCM polling is disabled.
 
 ---
 
