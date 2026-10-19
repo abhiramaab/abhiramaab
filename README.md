@@ -30,8 +30,6 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 ## Open Source Contributions
 
-### Tier 1: Core Frameworks & Distributed Systems
-
 - **[Spring Boot (Core)](https://github.com/spring-projects/spring-boot) (`fix-netty-graceful-abort-hang-52119`):** Avoid hang in `NettyWebServer.stop()` when stopping immediately after graceful shutdown abort.
 - **[Spring Cloud Config](https://github.com/spring-cloud/spring-cloud-config/pull/3272) (PR #3272 – Merged):** Azure DevOps Managed Identity passwordless authentication & Bearer token injection for JGit HTTP transport (+706 lines).
 - **[Apache BifroMQ](https://github.com/apache/bifromq/pull/314) (PR #314 – Integrated via [#315](https://github.com/apache/bifromq/pull/315)):** Netty decoder buffer boundary alignment with MQTT varints & outbound packet size enforcement (Issue #313).
@@ -42,11 +40,6 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 - **[Kestra Telegram Plugin](https://github.com/kestra-io/plugin-telegram/pull/51) (PR #51 – Merged):** Case-sensitive `parseMode` enum validation to fail fast before API dispatch.
 - **[Apache Hop Web](https://github.com/apache/hop/pull/8344) (PR #8344 – Merged):** Maintaining active `ServerPushSession` during pipeline log streaming to prevent UI freezes.
 - **[Apache Hop Core](https://github.com/apache/hop/pull/8343) (PR #8343 – Merged):** Startup HTTP wire logging noise suppression in `HopEnvironment`.
-
-### Tier 2: Jenkins Ecosystem & Tooling
-
-- **[Jenkins Atlassian Jira Software Cloud Plugin](https://github.com/jenkinsci/atlassian-jira-software-cloud-plugin/pull/143) (PR #143):** Resolved multibranch pipeline build/deployment URL routing 404s via `RunUrlProvider` branch path percent-encoding.
-- **[Jenkins Workflow SCM Step Plugin](https://github.com/jenkinsci/workflow-scm-step-plugin/pull/273) (PR #273):** Eliminated redundant local workspace baseline calculations when SCM polling is disabled.
 
 ---
 
