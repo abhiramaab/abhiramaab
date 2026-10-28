@@ -30,6 +30,7 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 
 ## Open Source Contributions
 
+- **[Apache Pulsar](https://github.com/apache/pulsar/pull/27022) (PR #27022 – Merged):** Prevent broker dispatch rate limiting overshoot under batched messages by dynamically scaling entry read limits using consumer batch estimates (`avgMessagesPerEntry`), preserving sub-batch forward progress, and handling uninitialized estimates before hash-range filtering (fixes #26959, merged into 5.1.0).
 - **[Spring Boot (Core)](https://github.com/spring-projects/spring-boot) (`fix-netty-graceful-abort-hang-52119`):** Avoid hang in `NettyWebServer.stop()` when stopping immediately after graceful shutdown abort.
 - **[Spring Cloud Config](https://github.com/spring-cloud/spring-cloud-config/pull/3272) (PR #3272 – Merged):** Azure DevOps Managed Identity passwordless authentication & Bearer token injection for JGit HTTP transport (+706 lines).
 - **[Apache BifroMQ](https://github.com/apache/bifromq/pull/314) (PR #314 – Integrated via [#315](https://github.com/apache/bifromq/pull/315)):** Netty decoder buffer boundary alignment with MQTT varints & outbound packet size enforcement (Issue #313).
