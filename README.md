@@ -34,13 +34,13 @@ Distributed Systems • Backend Engineering • Cloud Infrastructure
 - **[Spring Boot (Core)](https://github.com/spring-projects/spring-boot) (`fix-netty-graceful-abort-hang-52119`):** Avoid hang in `NettyWebServer.stop()` when stopping immediately after graceful shutdown abort.
 - **[Spring Cloud Config](https://github.com/spring-cloud/spring-cloud-config/pull/3272) (PR #3272 – Merged):** Azure DevOps Managed Identity passwordless authentication & Bearer token injection for JGit HTTP transport (+706 lines).
 - **[Apache BifroMQ](https://github.com/apache/bifromq/pull/314) (PR #314 – Integrated via [#315](https://github.com/apache/bifromq/pull/315)):** Netty decoder buffer boundary alignment with MQTT varints & outbound packet size enforcement (Issue #313).
+- **[Apache Hop](https://github.com/apache/hop/pull/9311) (PR #9311 – Merged):** Prevent `IllegalArgumentException` and unhandled retry loop abort in `RemoteHopServer.getDelay()` by guarding zero/negative jitter bounds in backoff calculation (fixes #9278).
 - **[Apache Shiro](https://github.com/apache/shiro/pull/2854) (PR #2854 – Merged into 3.0.1):** Microsoft Active Directory UPN vs DN principal binding fix in LDAP realm.
 - **[Apache Camel Kamelets](https://github.com/apache/camel-kamelets/pull/3039) (PR #3039 – Merged):** Preserving `ce-kafkakey` across HTTP hops to maintain Kafka partition ordering.
 - **[Spring Boot Admin](https://github.com/codecentric/spring-boot-admin/pull/5584) (PR #5584 – Merged):** Configurable browser notification timeouts & single-instance detail deep-linking (Issue #5504, +148 lines).
 - **[Kestra Core Engine](https://github.com/kestra-io/kestra/pull/19007) (PR #19007 – Merged):** Socket descriptor leak fix during MCP auto health check probing.
 - **[Kestra Telegram Plugin](https://github.com/kestra-io/plugin-telegram/pull/51) (PR #51 – Merged):** Case-sensitive `parseMode` enum validation to fail fast before API dispatch.
-- **[Apache Hop Web](https://github.com/apache/hop/pull/8344) (PR #8344 – Merged):** Maintaining active `ServerPushSession` during pipeline log streaming to prevent UI freezes.
-- **[Apache Hop Core](https://github.com/apache/hop/pull/8343) (PR #8343 – Merged):** Startup HTTP wire logging noise suppression in `HopEnvironment`.
+- **[Apache Hop Web](https://github.com/apache/hop/pull/8344) (PR #8344 & #8343 – Merged):** Maintaining active `ServerPushSession` during pipeline log streaming to prevent UI freezes, and startup HTTP wire logging noise suppression.
 
 ---
 
